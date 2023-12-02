@@ -1,0 +1,3 @@
+---
+title: "wasted repeated effort"
+---
