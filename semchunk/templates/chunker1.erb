@@ -1,5 +1,5 @@
 <%
-    req.model_id = "claude-instant-1"
+    req.model_id = "claude-1"
 %>
 
 
@@ -9,8 +9,8 @@ For each key idea, provide:
 (b) the original text sectionfrom which the idea was extracted.
 
 Respond with a json file containing an array of objects, one for each key idea, with the following fields:
-- "summary": the summary of the key idea
-- "text": the original text section from which the idea was extracted
+- "chunk": the summary of the key idea
+- "original_text": the original text section from which the idea was extracted
 
 Respond only with a json file, nothing else.
 
