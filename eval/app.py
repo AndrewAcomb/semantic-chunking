@@ -4,9 +4,10 @@ Flask server for running evals
 
 from flask import Flask, jsonify, request
 from flask_cors import CORS
-# from langdrive import LangDrive
+import requests
+# from lan  gdrive import LangDrive
 from run_eval import Eval
-
+import json
 import os
 
 app = Flask(__name__)
@@ -17,6 +18,54 @@ def index():
     try:
         response = {"response": True}
         return jsonify(response), 200
+    
+    except Exception as e:
+        error = str(e)
+        app.logger.error(str(e))
+        return jsonify({"error": "Internal server error", "message": error}), 500
+    
+
+@app.route("/batch")
+def batch():
+    try:
+        # Get the directory path where the batch outputs are
+        folder_path = request.args.get('folder_path')
+        directory_path = f"../{folder_path}"
+        data = {}
+
+        final_response = []
+        for filename in os.listdir(directory_path):
+            # Check if file is a .json file
+            if filename.endswith(".json"):
+                file_path = os.path.join(directory_path, filename)
+
+                # Open the file and load it as JSON
+                with open(file_path, 'r') as f:
+                    file_data = json.load(f)
+                
+                # Add the data from this file to main data object
+                print(type(file_data))
+                url = 'http://127.0.0.1:8080/eval'
+
+                # Define the data you want to send as post
+                headers = {'Content-Type': 'application/json'}
+                data = {
+                    "data": file_data
+                }
+
+                # Send the POST request
+                response = requests.post(url, headers=headers, data=json.dumps(data))
+                final_response.append({
+                    "filename": filename,
+                    "average_cosine_similarity": response.json()["average_cosine_similarity"]
+                })
+                print(response.json())
+
+
+        return jsonify({"response": final_response,
+                        "success": True}), 200
+
+
     
     except Exception as e:
         error = str(e)
