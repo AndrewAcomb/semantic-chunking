@@ -1,0 +1,22 @@
+{
+    "file": "raw_text/TheMoonsofMarsExplainedPhobosDeimosMM2.txt",
+    "original": " The moons of Mars explained. Mars has two moons, fobos and dimos. They are really tiny. How tiny? Compared to Mars or our own moon, pretty tiny. Although tiny is a matter of opinion. Their surface areas are close to some of the smallest states on Earth, like Luxembourg and Malta. Although fobos and dimos are in no way lightweight, in reality their gravitational pool isn't even strong enough to bring them into spherical form, so they look more like huge potatoes than moons. The most popular theory of their origin is that they will once part of the asteroid belt until Jupiter's massive gravity kick them out of it, so Mars could catch them. fobos orbit smart as an average distance of 9,400 kilometers, once every 7,5 hours. Sun a collision course and gets two meters close to Mars every year. In 52,100 million years, it will either be ripped to pieces by Mars's gravity and be transformed into a beautiful ring or it will crash into Mars. The energy released in this collision would kill everything on the small planet, so if there are humans on Mars by then, they should build very strong bunkers. All a dimos on the other hand is slowly escaping Mars. Eventually it will fly off into space and leave a lonely red planet behind. So in a few hundred million years Mars will be moonless and on its own. Unless it manages to catch itself another asteroid.",
+    "chunks": [
+        {
+            "chunk": " The moons of Mars explained. Mars has two moons, fobos and dimos. They are really tiny. How tiny? Compared to Mars or our own moon, pretty tiny. Although tiny is a matter of opinion.",
+            "original_text": " The moons of Mars explained. Mars has two moons, fobos and dimos. They are really tiny. How tiny? Compared to Mars or our own moon, pretty tiny. Although tiny is a matter of opinion."
+        },
+        {
+            "chunk": " Their surface areas are close to some of the smallest states on Earth, like Luxembourg and Malta. Although fobos and dimos are in no way lightweight, in reality their gravitational pool isn't even strong enough to bring them into spherical form, so they look more like huge potatoes than moons. The most popular theory of their origin is that they will once part of the asteroid belt until Jupiter's massive gravity kick them out of it, so Mars could catch them. fobos orbit smart as an average distance of 9,400 kilometers, once every 7,5 hours. Sun a collision course and gets two meters close to Mars every year.",
+            "original_text": " Their surface areas are close to some of the smallest states on Earth, like Luxembourg and Malta. Although fobos and dimos are in no way lightweight, in reality their gravitational pool isn't even strong enough to bring them into spherical form, so they look more like huge potatoes than moons. The most popular theory of their origin is that they will once part of the asteroid belt until Jupiter's massive gravity kick them out of it, so Mars could catch them. fobos orbit smart as an average distance of 9,400 kilometers, once every 7,5 hours. Sun a collision course and gets two meters close to Mars every year."
+        },
+        {
+            "chunk": " In 52,100 million years, it will either be ripped to pieces by Mars's gravity and be transformed into a beautiful ring or it will crash into Mars. The energy released in this collision would kill everything on the small planet, so if there are humans on Mars by then, they should build very strong bunkers. All a dimos on the other hand is slowly escaping Mars. Eventually it will fly off into space and leave a lonely red planet behind. So in a few hundred million years Mars will be moonless and on its own.",
+            "original_text": " In 52,100 million years, it will either be ripped to pieces by Mars's gravity and be transformed into a beautiful ring or it will crash into Mars. The energy released in this collision would kill everything on the small planet, so if there are humans on Mars by then, they should build very strong bunkers. All a dimos on the other hand is slowly escaping Mars. Eventually it will fly off into space and leave a lonely red planet behind. So in a few hundred million years Mars will be moonless and on its own."
+        },
+        {
+            "chunk": " Unless it manages to catch itself another asteroid.",
+            "original_text": " Unless it manages to catch itself another asteroid."
+        }
+    ]
+}
