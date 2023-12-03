@@ -5,14 +5,15 @@ require 'glim_ai'
 
 def generate_chunks(input)
     glim = GlimContext.new
-    r = glim.request(model_id: chunking_model).await_response
-
+    request = glim.request_from_template('chunker1.erb', input)
+    future = request.send_and_return_future
+    result = future.await_response
+    puts result.completion
 
 end
-
 
 input = File.read('input.txt')
 
 chunks = generate_chunks(input)
 
-puts chunks.join("\n\n")
+# puts chunks.join("\n\n")

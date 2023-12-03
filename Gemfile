@@ -9,6 +9,8 @@ gem 'anthropic'
 gem 'ruby-openai'
 gem 'json-schema'
 
+gem 'activesupport', '>= 7.0.8'
+
 gem 'tiktoken_ruby'
 
 gem 'nokogiri'
