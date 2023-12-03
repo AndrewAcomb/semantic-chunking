@@ -1,5 +1,0 @@
----
-title: "CG-comment-4"
-enableToc: false # do not show a table of contents on this page
----
-[[P- Chris Granger]]: Yeah, I probably didn't do a good job explaining this, but my stance is that there's a sort of layered dictionary approach where your personal dictionary is always the highest priority and failing to find it there cascades down into a hierarchy of definitions and synonyms. It's ridiculous to me though that I have to explain what "annual contract value" is to every tool. Within a domain, things often have accepted definitions and they should just be available to me to use directly or tweak to my liking without me having to systematically describe every aspect of them. Similarly though, there will be lots of words that are unique to me and I should have just as much power to define them.
