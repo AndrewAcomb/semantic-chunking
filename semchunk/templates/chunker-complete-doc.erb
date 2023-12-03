@@ -1,0 +1,21 @@
+<%
+    req.model_id = "claude-1"
+%>
+
+
+Split the INPUT text below into sections so that each section contains exactly one key idea. 
+For each key idea, provide: 
+(a) a short summary of the idea,
+(b) the original text section from which the idea was extracted.
+
+Respond with a json file containing an array of objects, one for each key idea, with the following fields:
+- "chunk": the summary of the key idea
+- "original_text": the original text section from which the idea was extracted
+
+Respond only with a json file, nothing else.
+
+Make sure that the original_text pieces are exactly the same as in the INPUT text below, including the punctuation.
+
+<INPUT>
+<%= input%>
+</INPUT>

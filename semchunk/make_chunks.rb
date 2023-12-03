@@ -13,7 +13,7 @@ Dir.mkdir(@output_dir) unless File.exist?(@output_dir)
 
 @glim = GlimContext.new
 
-def generate_chunks(input_path)
+def generate_chunks(input_path,template_name)
     puts ("Processing all files in #{input_path}...")
 
     file_data = {}
@@ -22,7 +22,7 @@ def generate_chunks(input_path)
         puts ("Processing #{file}...")
         input = File.read(file)
         item[:input] = input
-        request = @glim.request_from_template('chunker1', input:)
+        request = @glim.request_from_template(template_name, input:)
         future = request.send_and_return_future
         item[:future] = future
         file_data[file] = item
@@ -34,6 +34,7 @@ def generate_chunks(input_path)
         future = item[:future]
         response = future.await_response
         completion = response.completion
+        begin  
         json = JSON.parse(completion)
         json = {file: file, original: item[:input], chunks: json}
         json_text = JSON.pretty_generate(json)
@@ -41,11 +42,16 @@ def generate_chunks(input_path)
         puts ("Writing #{output_path}...")
         File.write(output_path, json_text)
         puts "Cost so far: $ #{'%5.2f' % @glim.cost}"
+        rescue JSON::ParserError => e
+            puts "Error parsing JSON: #{e}"
+            puts "JSON: #{completion}"
+        end
     end
 
 
 end
 
-generate_chunks("raw_text/*.txt")
+template_name = "chunker-complete-doc"
+generate_chunks("raw_text/*.txt", template_name)
 
 # puts chunks.join("\n\n")
