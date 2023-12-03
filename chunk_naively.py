@@ -1,5 +1,6 @@
 import sys
 import json
+from pathlib import Path
 
 def chunk_naively(path):
     with open(path,'r') as infile:
@@ -17,8 +18,10 @@ def chunk_naively(path):
         "original": raw_text,
         "chunks": chunks
     }
-
+    
+    with open("output/naive/" + Path(path).stem + ".json", 'w') as outfile:
+        json.dump(result,outfile,indent=4)
 
 if __name__ == "__main__":
-    default_path = "./raw_text/3ReasonsWhyNuclearEnergyIsAwesome33.txt"
+    default_path = "raw_text/3ReasonsWhyNuclearEnergyIsAwesome33.txt"
     chunk_naively(default_path)
