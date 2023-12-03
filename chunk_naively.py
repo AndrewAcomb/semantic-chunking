@@ -10,6 +10,8 @@ def chunk_naively(path):
     rt_split = raw_text.split('.')
     for i in range(0,len(rt_split),SENTENCES_PER_CHUNK):
         chunk = ".".join((rt_split[i:i+SENTENCES_PER_CHUNK]))
+        if not chunk:
+            continue
         if chunk[-1] != '.':
             chunk += '.'
         chunks.append({"chunk":chunk, "original_text":chunk})
@@ -23,5 +25,7 @@ def chunk_naively(path):
         json.dump(result,outfile,indent=4)
 
 if __name__ == "__main__":
-    default_path = "raw_text/3ReasonsWhyNuclearEnergyIsAwesome33.txt"
-    chunk_naively(default_path)
+    path = "raw_text/3ReasonsWhyNuclearEnergyIsAwesome33.txt"
+    if len(sys.argv) > 1:
+        path = sys.argv[1]
+    chunk_naively(path)
