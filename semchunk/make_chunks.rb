@@ -38,13 +38,20 @@ def generate_chunks(input_path,template_name)
         json = JSON.parse(completion)
         json = {file: file, original: item[:input], chunks: json}
         json_text = JSON.pretty_generate(json)
+
+        reconstructed = ""
+        json[:chunks].each do |chunk|
+            reconstructed += chunk['original_text']
+        end
+        puts "Difference in length: #{item[:input].length} vs #{reconstructed.length}"
+
         output_path = File.join(@output_dir, File.basename(file, File.extname(file))+".json")
         puts ("Writing #{output_path}...")
         File.write(output_path, json_text)
         puts "Cost so far: $ #{'%5.2f' % @glim.cost}"
         rescue JSON::ParserError => e
-            puts "Error parsing JSON: #{e}"
-            puts "JSON: #{completion}"
+            puts "Error parsing result for #{file}."
+            #puts "JSON: #{completion}"
         end
     end
 
