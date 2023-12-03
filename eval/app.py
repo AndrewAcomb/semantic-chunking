@@ -55,6 +55,13 @@ def batch():
 
                 # Send the POST request
                 response = requests.post(url, headers=headers, data=json.dumps(data))
+
+                # Add average_cosine_similarity to file_data and write into file
+                file_data["average_cosine_similarity"] = response.json()["average_cosine_similarity"]
+                with open(file_path, 'w') as f:
+                    json.dump(file_data, f)
+
+
                 final_response.append({
                     "filename": filename,
                     "average_cosine_similarity": response.json()["average_cosine_similarity"]
