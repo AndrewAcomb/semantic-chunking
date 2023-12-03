@@ -2,21 +2,21 @@
     Uses AutoEvals to run evals
     https://github.com/braintrustdata/autoevals
 """
-from autoevals.llm import *
+# from autoevals.llm import *
 from sklearn.feature_extraction.text import TfidfVectorizer
 from sklearn.metrics.pairwise import cosine_similarity
 
 # Create a new LLM-based evaluator
-evaluator = Factuality()
+# evaluator = Factuality()
 
 
 class Eval:
     def __init__(self) -> None:
         pass
 
-    def run_eval(self, input, output, expected):
-        result = evaluator(output, expected, input)
-        return result
+    # def run_eval(self, input, output, expected):
+    #     result = evaluator(output, expected, input)
+    #     return result
     
     def cosine_simililarity_between_two_texts(self, text1, text2):
         # Init tfidf vectorizer
