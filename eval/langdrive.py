@@ -22,7 +22,7 @@ class LangDrive:
         data = {
             "prompt": prompt,
             "model": model,
-            "max_tokens": max_tokens
+            # "max_tokens": max_tokens
         }
 
         response = requests.post(url, headers=headers, data=json.dumps(data))
